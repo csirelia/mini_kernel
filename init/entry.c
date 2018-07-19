@@ -1,5 +1,4 @@
-#include "types.h"
-#include "common.h"
+#include "console.h"
 
 int kern_entry()
 {
