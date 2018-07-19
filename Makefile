@@ -25,16 +25,16 @@ all: $(S_OBJECTS) $(C_OBJECTS) link update_image
 
 link:
 	@echo link kernel file ...
-	$(LD) $(LD_FLAGS) $(S_OBJECTS) $(C_OBJECTS) -o mini_kernel
+	$(LD) $(LD_FLAGS) $(S_OBJECTS) $(C_OBJECTS) -o hx_kernel
 
 .PHONY:clean
 clean:
-	$(RM) $(S_OBJECTS) $(C_OBJECTS) mini_kernel
+	$(RM) $(S_OBJECTS) $(C_OBJECTS) hx_kernel
 
 .PHONY:update_image
 update_image:
 	sudo mount floppy.img /mnt/kernel
-	sudo cp mini_kernel /mnt/kernel/mini_kernel		;need to mkdir kernel under the mnt first
+	sudo cp hx_kernel /mnt/kernel/hx_kernel		;need to mkdir kernel under the mnt first
 	sleep 1
 	sudo umount /mnt/kernel
 
