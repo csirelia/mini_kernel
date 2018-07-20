@@ -57,7 +57,7 @@ static inline char *strcat(char *dest, const char *src)
 	}
 
 	while ((*cp++ = *src++))
-	      ;
+	    ;
 
 	return dest;
 }
@@ -66,8 +66,8 @@ static inline int strlen(const char *src)
 {
 	const char *eos = src;
 
-        while (*eos++)
-	      ;
+    while (*eos++)
+	    ;
 
 	return (eos - src - 1);
 }
