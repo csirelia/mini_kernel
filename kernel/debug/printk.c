@@ -5,7 +5,7 @@
 
 static int vsprintf(char *buff, const char *format, va_list args);
 
-void printk(consta char *format, ...)
+void printk(const char *format, ...)
 {
 	static char buff[1024];
 	va_list args;
@@ -59,7 +59,7 @@ static int skip_atoi(const char **s)
 
 #define do_div(n, base)({ \
 				int __res; \
-				__asm__("divl %4" : "=a" (n), "=d" (__res):"0" (n),"1" (0), "r" (base));
+				__asm__("divl %4" : "=a" (n), "=d" (__res):"0" (n),"1" (0), "r" (base)); \
 				__res; })
 
 static char *number(char *str, int num, int base, int size, int precision, int type)
