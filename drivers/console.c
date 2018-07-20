@@ -87,14 +87,14 @@ void console_putc_color(char c, real_color_t back, real_color_t fore)
 	if (c == 0x08 && cursor_x) {
 	      cursor_x--;
 	} else if (c == 0x09) {
-	      cursor_x = (cursor_x+8) & ~(8-1);
-	} else if (c == '\r') {
+	      cursor_x = (cursor_x + 8) & ~(8-1);
+	} else if (c == '\r') {		//返回到当前行的初始位置
 	      cursor_x = 0;
 	} else if (c == '\n') {
 		cursor_x = 0;
 		cursor_y++;
 	} else if (c >= ' ') {
-		video_memory[cursor_y*80 + cursor_x] = c | attribute;
+		video_memory[cursor_y * 80 + cursor_x] = c | attribute;
 		cursor_x++;
 	}
 
@@ -133,7 +133,7 @@ void console_write_hex(uint32_t n, real_color_t back, real_color_t fore)
 	int tmp;
 	char noZeroes = 1;
 
-	console_write_color("0x", back, fore);
+	console_write_color("0x", back, fore);		//先输出0x前缀
 
 	int i;
 	for (i = 28; i >= 0; i -= 4) {
@@ -143,9 +143,9 @@ void console_write_hex(uint32_t n, real_color_t back, real_color_t fore)
 		}
 		noZeroes = 0;
 		if (tmp >= 0xA) {
-		      console_putc_color(tmp-0xA+'a', back, fore);
+		      console_putc_color(tmp - 0xA + 'a', back, fore);
 		} else {
-		      console_putc_color(tmp+'0', back, fore);
+		      console_putc_color(tmp + '0', back, fore);
 		}
 	}
 }
