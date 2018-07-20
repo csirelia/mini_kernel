@@ -1,21 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  console.c
- *
- *    Description:  屏幕操作的一些函数实现
- *
- *        Version:  1.0
- *        Created:  2013年11月02日 21时58分00秒
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Hurley (LiuHuan), liuhuan1992@gmail.com
- *        Company:  Class 1107 of Computer Science and Technology
- *
- * =====================================================================================
- */
-
 #include "console.h"
 #include "common.h"
 
@@ -79,7 +61,7 @@ static void scroll()
 void console_clear()
 {
 	uint8_t attribute_byte = (0 << 4) | (15 & 0x0F);
-	uint16_t blank = 0x20 | (attribute_byte << 8);
+	uint16_t blank = 0x20 | (attribute_byte << 8);		//word format{character code:[0-7], foreground color:[8-11], background color:[12-15]}
 
 	int i;
 	for (i = 0; i < 80 * 25; i++) {
