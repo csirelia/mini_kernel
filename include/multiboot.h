@@ -1,20 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  multiboot.h
- *
- *    Description:  Multiboot 结构的定义
- *
- *        Version:  1.0
- *        Created:  2013年10月31日 13时08分01秒
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Hurley (LiuHuan), liuhuan1992@gmail.com
- *        Company:  Class 1107 of Computer Science and Technology
- *
- * =====================================================================================
- */
 #ifndef INCLUDE_MULTIBOOT_H_
 #define INCLUDE_MULTIBOOT_H_
 
